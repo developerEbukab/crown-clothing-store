@@ -1,0 +1,198 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    // This defines what 1rem is
+    font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+
+    @include respond(tab-land) { // width < 1200?
+        font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+    }
+
+    @include respond(tab-port) { // width < 900?
+        font-size: 50%; //1 rem = 8px, 8/16 = 50%
+    }
+    
+    @include respond(big-desktop) {
+        font-size: 75%; //1rem = 12, 12/16
+    }
+}
+
+body {
+    box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@include respond(phone){
+  .RemoveFromMobileView{
+    display: none;
+  }
+}
+
+a { color: inherit; }
+
+.animate {
+    -moz-transition:all .5s ease-in-out 0s;
+    -o-transition:all .5s ease-in-out 0s;
+    -webkit-transition:all .5s ease-in-out 0s;
+}
+
+.containerVerticalMarginLarge{
+    margin: 10rem 0;
+}
+
+.listItem{
+    display: flex;
+    flex-direction: row;
+    /* box-shadow: 0 0 2px black; */
+    .point{
+        color: lighten($color : $color-black , $amount: 50);
+        margin-right: 1rem;
+    }
+}
+
+.ProjectTypes{
+    display: flex;
+    justify-content: center;
+    // margin: .5rem 0 7rem 0;
+    transform: translateY(15%);
+    background-color: $color-white;
+    padding-left: 1rem;
+
+    @include respond(phone){
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+      overflow-x: scroll;
+      padding: 0 ;
+      padding-top: 1rem;
+      -ms-overflow-style: none;  /* Internet Explorer 10+ */
+      scrollbar-width: none;  /* Firefox */
+
+      &::-webkit-scrollbar {
+        width: 0;  /* Remove scrollbar space */
+        height: 0;
+        display: none;  /* Optional: just make scrollbar invisible */
+      }
+    }
+
+    .ProjectType{
+      background-color: $color-grey;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: .3rem 1.2rem;
+      border-radius: 100rem;
+      white-space: nowrap;
+      transition: all .2s ease-in;
+
+      @include respond(phone){
+        padding: .5rem 1.5rem ;
+        // background-color: blue;
+      }
+
+      &:not(:last-child){
+        margin-right: 1.5rem;
+        // background-color: red;
+      }
+
+      &:hover{
+        background-color: darken($color: $color-grey, $amount: 30);
+        color: $color-white;
+        cursor: pointer;
+        -webkit-box-shadow: 0 0 10px darken($color: $color-grey, $amount: 10);
+        box-shadow: 0 0 10px darken($color: $color-grey, $amount: 10);
+        transform: translateY(-1px);
+      }
+
+      &:active{
+        background-color: $color-primary;
+        color: $color-white;
+        cursor: pointer;
+        -webkit-box-shadow: 0 0 10px darken($color: $color-grey, $amount: 5);
+        box-shadow: 0 0 10px darken($color: $color-grey, $amount: 5);
+        transform: translateY(1px);
+      }
+    }
+
+    .ProjectTypeActive{
+      background-color: $color-primary;
+      color: $color-white;
+      cursor: none;
+      -webkit-box-shadow: 0 0 10px darken($color: $color-grey, $amount: 10);
+      box-shadow: 0 0 10px darken($color: $color-grey, $amount: 10);
+      transform: translateY(-1px);
+
+      &:hover{
+        cursor: none;
+        background-color: $color-primary;
+        color: $color-white;
+      }
+    }
+  }
+
+// .Image{
+//   background-color: $color-white;
+//   height: 30rem;
+//   width: 95%;
+//   z-index: 2;
+//   overflow: hidden;
+//   transition: all .2s;
+//   box-shadow: 0 0 1rem $color-grey-dark;
+//   border-radius: 1rem;
+//   display: flex;
+//   align-items: center;
+
+//   img{
+//     width: 100%;
+//     height: auto;
+//     object-fit: cover;
+//     flex: 1;
+//   }
+// }
+  
+
+// a{
+//     text-decoration: none;
+//     color: black;
+//     @include transition;
+// }
+
+// input, button{
+//     font-family: inherit;
+//     font-size: inherit;
+//     //background-color: transparent;
+// }
+
+// textarea:focus, input:focus, input:active,button, button:focus, button:active, select:focus, select:active{
+//     outline: none;
+//     font-family: inherit;
+//     border: none
+//     //background-color: transparent;
+// }
+
+// .authBottomMarginTop{
+//     margin-top: 3rem;
+//   }
+
+// input:-webkit-autofill,
+// input:-webkit-autofill:hover, 
+// input:-webkit-autofill:focus, 
+// input:-webkit-autofill:active  {
+//     -webkit-box-shadow: 0 0 0 30px $color-grey-light inset !important;
+// }
+
+// ::-webkit-scrollbar {
+//     width: 0px;
+//     background: transparent; /* make scrollbar transparent */
+// }
+

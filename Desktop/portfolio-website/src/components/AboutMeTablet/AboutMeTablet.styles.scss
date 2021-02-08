@@ -1,0 +1,137 @@
+@import "../../sass/mixins";
+@import "../../sass/variables";
+
+.AboutMeTablet{
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  grid-column-gap: 5%;
+  align-items: center;
+  padding: 3rem 0 15rem 0;
+  display: none;
+
+  @include respond(tab-land){
+    display: grid;
+  }
+
+  @include respond(phone){
+    display: none;
+  }
+
+  .ImageContainer{
+    // background-color: green;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 50vh;
+    position: relative;
+
+    .StyleBox{
+      height: 50%;
+      width: 70%;
+      top: 0;
+      left: 0;
+      position: absolute;
+      background-color: $color-primary;
+      // box-shadow: 0 0 1rem $color-black;
+      z-index: 1;
+    }
+
+    .Image{
+      height: 90%;
+      width: 90%;
+      // background-color: blue;
+      border-left: 1rem solid $color-white;
+      border-top: 1rem solid $color-white;
+      box-shadow: 0 0 2rem $color-black;
+      // -moz-box-shadow-bottom: 1rem 1rem 1rem lighten($color: #000000, $amount: 40);
+      // -webkit-box-shadow-bottom: 1rem 1rem 1rem lighten($color: #000000, $amount: 40);
+      // box-shadow: 1rem 1rem 1rem lighten($color: #000000, $amount: 40);
+      z-index: 3;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+
+      i{
+        height: 5vh;
+        width: 5vh;
+        font-size: 2.2rem;
+        display: flex;
+        justify-content: center;
+        align-items:  center;
+        color: white;
+        padding: 2rem;
+        // margin: 0 .5rem;
+        // border-radius: 200rem;
+        transition: all .2s ease-in-out;
+        border : 5px solid $color-white;
+        margin-right: 2rem;
+        transform: translateY(70%);
+        box-shadow: 0 0 2rem $color-black;
+
+        &:hover{
+          box-shadow:  0 0 10px black;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .AboutMeTablet-Details{
+    .text{
+      .role{
+        color: $color-primary;
+        // font-weight: bold;
+        // font-size: 2rem;
+      }
+    }
+
+    .aboutMe{
+      margin: 2rem 0;
+    }
+
+    .buttons{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 1rem;
+      // background-color: green;
+      // height: 8%;
+      // height: 40rem;
+  
+      .button{
+        width: 15rem;
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $color-primary;
+        color: $color-white;
+        border: 2px solid $color-primary;
+        font-weight: bold;
+        letter-spacing: .5px;
+        text-align: center;
+        border-radius: 1rem ;
+        @include transition;
+  
+        &:hover{
+          cursor: pointer;
+          @include scaleSize(1.01);
+          box-shadow: 0px 1px 1px 1px darken($color: $color-grey, $amount: 25);
+        }
+  
+        &:active{
+          cursor: pointer;
+          box-shadow: 0px 0px 0px 0px darken($color: $color-grey, $amount: 25);
+          @include scaleSize(0.99);
+        }
+      }
+  
+      .inverted{
+        background-color: $color-white;
+        color: $color-primary;
+        margin-right: 5rem;
+      }
+    }
+  }
+}

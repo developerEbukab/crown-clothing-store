@@ -1,0 +1,134 @@
+@import "../../sass/mixins";
+@import "../../sass/variables";
+
+.WorkHistoryContainer{
+  padding-bottom: 6rem;
+  // background-color: red;
+
+  @include respond(phone){
+    margin-bottom: 2rem;
+    padding-bottom: 4rem;
+    border-bottom: 2rem solid $color-grey;
+
+  }
+  
+  .workContainer{
+    // background-color: grey;
+    display: grid;
+    grid-template-columns: 1.3fr  3fr;
+
+    .ForMobile{
+      display: none;
+    }
+
+    .typeContainer{
+      .role{
+        color: $color-primary;
+      }
+
+      .dateAndLocationMobile{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        
+      }
+    }
+
+    @include respond(phone){
+      display: flex;
+      flex-direction: column;
+      margin-top: 5rem;
+
+      .ForMobile{
+        display: initial;
+      }
+    }
+  
+    .contentContainer{
+      // background-color: red;
+      border-left: 4px solid lighten($color: $color-primary, $amount: 40);
+      padding: 0 0 6% 3%;
+      // background-color: blue;
+
+      .linkButtonCompany{
+        background-color: $color-primary;
+        color: $color-white;
+        padding: 1rem 2rem;
+        margin-top: 2rem;
+        border-radius: .5rem;
+        transition: all .2s;
+        // transform: translateY(-20rem);
+        font-size: 1.5rem;
+        display: inline-block;
+
+        &:hover{
+          background-color: darken($color: $color-primary, $amount: 10);
+          transform: scale(1.01);
+          cursor: pointer;
+          box-shadow: 0 0 1rem grey;
+        }
+      }
+
+      @include respond(phone){
+        border: 0;
+      }
+
+      .implementations{
+        margin: 1rem 0;
+      }
+
+      .techTitle{
+        font-weight: bold;
+      }
+
+      .HeadingContainer{
+        // background-color: blue;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        position: relative;
+
+        .Heading{
+          display: flex;
+          justify-content: space-between;
+          // background-color: blue;
+
+          .pointerBox{
+            background-color: $color-white;
+            width: 2.6rem;
+            height: 2.6rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 1000rem;
+            border: 5px solid $color-primary;
+            position: absolute;
+            transform: translateX(-155%);
+  
+            .pointer{
+              color: $color-primary;
+              font-size: 2rem;
+            }
+          }
+
+          @include respond(phone){
+            .pointerBox{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.location{
+  display: flex;
+  align-items: center;
+  color: grey;
+
+  i{
+    margin-right: .5rem;
+  }
+}

@@ -1,0 +1,122 @@
+@import "../../sass/mixins";
+@import "../../sass/variables";
+
+.skillsContainer{
+  // background-color: red;
+  margin-bottom: 4rem;
+
+  @include respond(phone){
+    margin-bottom: 2rem;
+    padding-bottom: 4rem;
+    border-bottom: 2rem solid $color-grey;
+
+  }
+
+  .skillsHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // background-color: red;
+    // margin-bottom: 5rem;
+  }
+
+  .skillsOptions{
+    // background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // margin-bottom: 4rem;
+
+    .option{
+      margin-right: 2rem;
+      display: inline-block;
+      padding-bottom: 3px;
+      position: relative;
+      // margin-bottom: 1rem;
+      font-size: 20px;
+      @include transition;
+
+      &:hover{
+        // color: $color-primary;
+        cursor: pointer;
+        font-weight: bold;
+        @include underline;
+      }
+    }
+
+    .active{
+      color: $color-primary;
+      cursor: pointer;
+      font-weight: bold;
+      @include underline;
+    }
+  }
+  .skillsBlock{
+    .skillTitle{
+      font-weight: bold;
+      margin-bottom: 1rem;
+      // background-color: red;
+      display: flex;
+      justify-content: flex-start;
+    }
+    
+  }
+}
+
+.skills{
+  display: grid;
+  grid-template-columns: 16% 16% 16% 16% 16% 16%;
+  grid-column-gap: .8%;
+
+  @include respond(phone){
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-column-gap: 1px;
+    // background-color: red;
+  }
+
+  .skill{
+    // background-color: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    // margin-bottom: 1.5rem;
+
+    @include respond(phone){
+      margin-bottom: 1.5rem;
+    }
+
+    .icon{
+      // background-color:$color-grey;
+      box-shadow:  0 0 1rem lighten($color: #000000, $amount: 70);
+      height: 9vh;
+      width: 9vh;
+      @include borderRadius(150rem);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img{
+        max-width: 48px;
+        max-height: 48px;
+      }
+    }
+
+    .name{
+      padding: .5rem 2rem;
+      @include borderRadius(150rem);
+      transform: translate(0vh , -2vh);
+      background-color:$color-grey;
+      border: 3px solid $color-white;
+      font-weight: bold;
+
+      @include respond(phone){
+        padding: .5rem 1rem;
+        font-size: 1.4rem;
+        transform: translate(0vh , -1.5vh);
+      }
+    }
+  }
+}

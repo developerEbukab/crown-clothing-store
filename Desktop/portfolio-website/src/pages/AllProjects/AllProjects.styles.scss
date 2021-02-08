@@ -1,0 +1,12 @@
+@import "../../sass/mixins";
+@import "../../sass/variables";
+
+.allProjectsContainer{
+  height: 100%;
+  width: 100%;
+  background-color: $color-white;
+  @include borderRadius(1rem);
+  overflow: hidden;
+  overflow-y: scroll;
+  padding : 2rem;
+}
